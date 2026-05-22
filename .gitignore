@@ -1,0 +1,13 @@
+# Archivos compilados de Java
+*.class
+*.jar
+
+# Archivos de proyecto IntelliJ
+.idea/
+*.iml
+out/
+
+# Archivos temporales
+*.swp
+.DS_Store
+
