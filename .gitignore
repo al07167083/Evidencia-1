@@ -1,22 +1,13 @@
-# Archivos compilados Java
+# Archivos compilados de Java
 *.class
 *.jar
 
-# Carpeta de salida de compilación
-out/
-
-# Archivos de base de datos (no subir al repositorio)
-db/*.csv
-db/*.json
-db/*.xml
-
-# Archivos temporales de IntelliJ IDEA
+# Archivos de proyecto IntelliJ
 .idea/
 *.iml
-*.iws
-*.ipr
+out/
 
-# Archivos temporales de sistema
+# Archivos temporales
 *.swp
 .DS_Store
-Thumbs.db
+
