@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SistemaClinico" default="fat-jar" basedir=".">
+
+    <property name="src.dir"     value="src/main/java"/>
+    <property name="build.dir"   value="out/production"/>
+    <property name="jar.file"    value="SistemaClinico.jar"/>
+    <property name="main.class"  value="clinica.Main"/>
+
+    <!-- 1. Limpiar salida anterior -->
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+        <delete file="${jar.file}"/>
+    </target>
+
+    <!-- 2. Compilar fuentes -->
+    <target name="compile" depends="clean">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${src.dir}"
+               destdir="${build.dir}"
+               includeantruntime="false"
+               encoding="UTF-8"
+               source="11"
+               target="11"/>
+    </target>
+
+    <!-- 3. Empaquetar como FAT JAR ejecutable -->
+    <target name="fat-jar" depends="compile">
+        <jar destfile="${jar.file}" basedir="${build.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}"/>
+            </manifest>
+        </jar>
+        <echo message="FAT JAR generado: ${jar.file}"/>
+        <echo message="Ejecutar con: java -jar ${jar.file}"/>
+    </target>
+
+</project>
